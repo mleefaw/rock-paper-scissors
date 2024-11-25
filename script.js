@@ -16,35 +16,37 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "rock" && computerChoice === "paper") {
-      console.log("You lose! Paper beats Rock.");
+    if (humanChoice === computerChoice) {
+      console.log(`Tie! ${humanChoice} vs ${computerChoice}`);
+    } else if (humanChoice === "rock" && computerChoice === "paper") {
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
       computerScore++;
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-      console.log("You win! Rock beats Scissors.");
+      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
       humanScore++;
-    } else if (humanChoice === "rock" && computerChoice === "rock") {
-      console.log("No one wins! Rock vs Rock.");
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-      console.log("You win! Paper beats Rock.");
+      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
       humanScore++;
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-      console.log("You lose! Scissors beats Paper.");
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
       computerScore++;
-    } else if (humanChoice === "paper" && computerChoice === "paper") {
-      console.log("No one wins! Paper vs Paper.");
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-      console.log("You lose! Rock beats Scissors.");
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
       computerScore++;
     } else if (humanChoice === "scissors" && computerChoice === "paper]") {
-      console.log("You win! Scissors beats Paper.");
+      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
       humanScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "scissors") {
-      console.log("No one wins! Scissors vs Scissors.");
     }
   }
   for (i = 0; i < 5; i++) {
     playRound(getHumanChoice().toLowerCase(), getComputerChoice());
-    console.log(`You: ${humanScore} | Computer: ${computerScore}`);
+    console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
+  }
+
+  if (humanScore > computerScore) {
+    console.log("You are the winner of this game!");
+  } else {
+    console.log("You've lost this game!");
   }
 }
 
