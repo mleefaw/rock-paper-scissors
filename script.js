@@ -9,7 +9,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  return prompt("Rock, Paper or Scissors?");
+  return prompt("Rock, Paper or Scissors?").toLowerCase();
 }
 
 function playGame() {
@@ -39,7 +39,7 @@ function playGame() {
     }
   }
   for (i = 0; i < 5; i++) {
-    playRound(getHumanChoice().toLowerCase(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
     console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
   }
 
