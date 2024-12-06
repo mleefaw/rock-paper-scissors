@@ -11,6 +11,13 @@ body {
   text-align: center;
 }
 
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .game {
   width: 400px;
   margin: 0 auto;
@@ -28,28 +35,23 @@ body {
 }
 
 .reset-btn {
-  font-size: 24px;
+  padding: 8px 32px;
+  font-size: 18px;
 }
 
 .score {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   font-size: 24px;
   margin-bottom: 50px;
 }
-/* 
-.choices {
-  font-size: 18px;
-}
-
-.play {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
 
 .hidden {
   display: none;
+}
+
+#display-winner {
+  font-size: 36px;
+  color: aliceblue;
 }

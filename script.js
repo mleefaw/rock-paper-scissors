@@ -2,21 +2,22 @@
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
-const choiceButtons = document.querySelectorAll(".btn");
 const displayHumanScore = document.getElementById("display-human-score");
 const displayComputerScore = document.getElementById("display-computer-score");
 const displayResult = document.getElementById("display-result");
 const displayHumanChoice = document.getElementById("player-choice");
 const displayComputerChoice = document.getElementById("computer-choice");
 const displayRound = document.getElementById("display-round");
-const displayOver = document.getElementById("display-over");
+const displayWinner = document.getElementById("display-winner");
 const resetGameBtn = document.querySelector(".reset-btn");
 
-// initalize game
 let humanScore;
 let computerScore;
 let round;
 let playing;
+
+// initalize game
+initalizeGame();
 
 function initalizeGame() {
   playing = true;
@@ -27,18 +28,10 @@ function initalizeGame() {
   displayComputerScore.textContent = computerScore;
 }
 
-initalizeGame();
-
 // generate computer move
 function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * 3);
-  if (computerChoice === 0) {
-    computerChoice = "rock";
-  } else if (computerChoice === 1) {
-    computerChoice = "paper";
-  } else {
-    computerChoice = "scissors";
-  }
+  const choices = ["rock", "paper", "scissors"];
+  const computerChoice = choices[Math.floor(Math.random() * 3)];
   return computerChoice;
 }
 
@@ -64,20 +57,22 @@ function playRound(humanChoice, computerChoice) {
 
   round++;
   displayRound.textContent = round;
-
   displayComputerChoice.textContent = computerChoice;
   displayHumanChoice.textContent = humanChoice;
   displayHumanScore.textContent = humanScore;
   displayComputerScore.textContent = computerScore;
 
-  checkMoves();
+  checkWinner();
 }
 
-// check winner / end game
-function checkMoves() {
-  if (round >= 5) {
+// check winner
+function checkWinner() {
+  if (humanScore >= 5 || computerScore >= 5) {
     resetGameBtn.classList.remove("hidden");
     playing = false;
+    humanScore > computerScore
+      ? (displayWinner.textContent = "You win! 🏆")
+      : (displayWinner.textContent = "Computer wins! 🏆");
   }
 }
 
@@ -89,6 +84,7 @@ resetGameBtn.addEventListener("click", () => {
   displayResult.textContent = "";
   displayComputerChoice.textContent = "";
   displayHumanChoice.textContent = "";
+  displayWinner.textContent = "";
 });
 
 // game buttons
