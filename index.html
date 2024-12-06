@@ -11,34 +11,45 @@
     <!-- Header Section -->
     <div class="header">
       <h1>Rock Paper Scissors</h1>
+      <p>Choose a move. Best out of 5 rounds is the winner!</p>
     </div>
-
-    <!-- Score Section -->
-    <div class="score">
-      <p>Player: <span id="display-human-score">0</span></p>
-      <p>Computer: <span id="display-computer-score">0</span></p>
-    </div>
-
-    <!-- Game Section -->
-    <div>
-      <div class="buttons">
-        <button class="btn" id="rock">ROCK</button>
-        <button class="btn" id="paper">PAPER</button>
-        <button class="btn" id="scissors">SCISSORS</button>
-      </div>
-    </div>
-
-    <!-- Game Section -->
+    <!-- Game Buttons -->
     <div class="game">
-      <h3>Round: <span id="display-moves"></span></h3>
-      <h3>Player: <span id="player-choice"></span></h3>
-      <h3>Computer: <span id="computer-choice"></span></h3>
-      <h3>Result: <span id="display-result"></span></h3>
-    </div>
-
-    <!-- Game Over Section -->
-    <div class="reset">
-      <button class="btn reset-btn hidden">PLAY AGAIN</button>
+      <div class="buttons">
+        <button class="btn" id="rock">👊</button>
+        <button class="btn" id="paper">🖐️</button>
+        <button class="btn" id="scissors">✌️</button>
+      </div>
+      <!-- Rounds -->
+      <div class="rounds">
+        <p>Round # <span id="display-round"></span></p>
+      </div>
+      <!-- Choices -->
+      <div class="choices">
+        <p>
+          <span id="player-choice"></span> vs
+          <span id="computer-choice"></span>
+        </p>
+      </div>
+      <!-- Result Section -->
+      <div class="result">
+        <p><span id="display-result"></span></p>
+      </div>
+      <!-- Scores -->
+      <div class="score">
+        <div class="player-score">
+          <p>Player</p>
+          <span id="display-human-score">0</span>
+        </div>
+        <div class="computer-score">
+          <p>Computer</p>
+          <span id="display-computer-score">0</span>
+        </div>
+      </div>
+      <!-- Initialize Game Button -->
+      <div class="reset">
+        <button class="btn reset-btn hidden">PLAY AGAIN</button>
+      </div>
     </div>
   </body>
 </html>
