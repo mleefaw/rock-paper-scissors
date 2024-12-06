@@ -71,8 +71,12 @@ function checkWinner() {
     resetGameBtn.classList.remove("hidden");
     playing = false;
     humanScore > computerScore
-      ? (displayWinner.textContent = "You win! 🏆")
-      : (displayWinner.textContent = "Computer wins! 🏆");
+      ? (displayWinner.textContent = "You win! 🏆")(
+          (displayWinner.style.color = "lime")
+        )
+      : (displayWinner.textContent = "Computer wins! 🏆")(
+          (displayWinner.style.color = "red")
+        );
   }
 }
 
