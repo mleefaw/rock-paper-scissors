@@ -80,11 +80,6 @@ function checkWinner() {
   }
 }
 
-<<<<<<< HEAD
-playGame();
-
-console.log("branch test");
-=======
 // reset game
 resetGameBtn.addEventListener("click", () => {
   initalizeGame();
@@ -108,4 +103,3 @@ paperButton.addEventListener("click", () => {
 scissorsButton.addEventListener("click", () => {
   if (playing) playRound("scissors", getComputerChoice());
 });
->>>>>>> rps-ui
