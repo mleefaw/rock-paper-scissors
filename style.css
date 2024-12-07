@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  /* margin: 0; */
   padding: 0;
 }
 
@@ -26,7 +25,7 @@ body {
 .buttons {
   margin: 32px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .btn {
@@ -38,6 +37,13 @@ body {
   width: 100%;
   padding: 8px 0px;
   font-size: 18px;
+}
+
+.btn:hover,
+.reset-btn:hover {
+  border: 1px solid #fff;
+  color: #f7f7f7;
+  background-color: #222;
 }
 
 .score {
